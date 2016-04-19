@@ -1,0 +1,17 @@
+#!/bin/bash
+filename=`date +"%F_%H-%M-%S"`
+filename+="-$1"
+
+echo -e "Filename = [$filename]"
+
+read -p "Correct? (y/n) " option
+echo 
+
+if [[ ! $option =~ [yY](es)* ]]; then
+    exit 0
+fi
+
+touch $filename
+
+echo -e " * Creating file [$filename]"
+
